@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      ONE - Alura Latam - Dibujando cuadrados con funciones y ciclos
+    </title>
+  </head>
+  <body>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+      function dibujarCuadrados(color, px, py, x, y) {
+        let pantalla = document.querySelector("canvas");
+        let pincel = pantalla.getContext("2d");
+
+        pincel.fillStyle = color;
+        pincel.fillRect(px, py, x, y);
+        pincel.strokeStyle = "black";
+        pincel.strokeRect(px, py, x, y);
+      }
+
+      // dibujarCuadrados("green", 0, 0, 50, 50);
+      // dibujarCuadrados("yellow", 0, 50, 50, 50);
+      // dibujarCuadrados("red", 0, 100, 50, 50);
+
+      let i = 0;
+      for (i = 0; i <= 600; i = i + 50) {
+        dibujarCuadrados("green", i, 0, 50, 50);
+        dibujarCuadrados("yellow", i, 50, 50, 50);
+        dibujarCuadrados("red", i, 100, 50, 50);
+      }
+    </script>
+  </body>
+</html>
